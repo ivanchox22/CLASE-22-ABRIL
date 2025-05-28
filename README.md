@@ -1,4 +1,4 @@
-# USO DE LOS GEMELOS DIGITALES
+# COMO HACER USO DE LOS GEMELOS DIGITALES (QUANSER)
 
 Los gemelos digitales son representaciones virtuales de sistemas físicos que permiten simular y analizar su comportamiento en un entorno controlado.  
 
