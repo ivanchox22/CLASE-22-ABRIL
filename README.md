@@ -18,33 +18,44 @@ Los gemelos digitales son representaciones virtuales de sistemas físicos que pe
 
 > 🔑 Pulse Generator: Bloque de Simulink que genera señales cuadradas periódicas con parámetros configurables (amplitud, frecuencia y ciclo de trabajo), usado para excitar sistemas de control.
 
-> 🔑 Simulink Real-Time: Entorno de ejecución determinístico que permite implementar modelos de Simulink en sistemas embebidos o PCs dedicadas para control en tiempo real con precisión de microsegundos.
+# 2) Requisitos Previos  
 
-> 🔑 Encoder Óptico: Sensor de posición que convierte el movimiento angular en pulsos digitales mediante un disco codificado y fotodetectores, proporcionando mediciones precisas de posición y velocidad.
+A continuación se detallan los requisitos mínimos necesarios para poder utilizar el software Quanser en conjunto con MATLAB. Es importante cumplir con estas especificaciones para garantizar el correcto funcionamiento de las herramientas.  
 
-> 🔑 Control PID: Algoritmo de control retroalimentado que ajusta la señal de salida en función de tres componentes: Proporcional (error actual), Integral (error acumulado) y Derivativo (tasa de cambio del error).
-
-# 2)  Requisitos Previos  
 - **MATLAB** (versión R2021a+)  
+  *Se requiere una versión reciente de MATLAB debido a las dependencias de librerías y funciones utilizadas por QUARC.*  
 - **Cuenta Quanser**: [Registro aquí](https://portal.quanser.com/)  
+  *Es necesario registrarse en el portal de Quanser para acceder a descargas de software, licencias y documentación técnica.*  
 - **Complemento QUARC**  
+  *QUARC es un middleware esencial para la comunicación en tiempo real entre MATLAB/Simulink y los dispositivos Quanser.*  
 
-# 3) PASO A PASO
+# 3) PASO A PASO  
 
-En este apartado se podra visualizar el paso a paso para iniciar y utilizar el programa de Quanser y Matlab.
+En este apartado se detalla el proceso de configuración inicial para integrar Quanser Interactive Labs con MATLAB, incluyendo capturas ilustrativas.  
 
-## 3.1 Instalación del Complemento Quanser Interactive Labs
-- Abrir MATLAB.
+## 3.1 Instalación del Complemento Quanser Interactive Labs  
 
-- Descargar el complemento Quanser Interactive Labs desde el portal.
+*Este procedimiento instala las bibliotecas necesarias para la creación y operación de gemelos digitales en entornos Quanser:*  
 
-- Instalar el paquete siguiendo las instrucciones del asistente.
+- **Abrir MATLAB**  
+  *Inicie MATLAB con privilegios de administrador para evitar conflictos durante la instalación.*  
 
-![image](https://github.com/user-attachments/assets/5ba8c5e4-a6d4-4e25-ae59-f07311455623)
+- **Descargar el complemento Quanser Interactive Labs desde el portal**  
+  *El paquete de instalación está disponible en la sección "Downloads" de su cuenta Quanser después del login.*  
 
+- **Instalar el paquete siguiendo las instrucciones del asistente**  
+  *Acepte los términos de licencia y seleccione la opción "Typical Install" a menos que necesite componentes personalizados.*  
 
-🔹 Figura 1: Complemento Quanser Interactive Labs para gemelos digitales
+![image](https://github.com/user-attachments/assets/5ba8c5e4-a6d4-4e25-ae59-f07311455623)  
+🔹 *Figura 1: Interfaz del complemento Quanser Interactive Labs para gemelos digitales, mostrando el panel de control de dispositivos virtuales.*  
 
-# 4) CONCLUSIONES
+# 4) CONCLUSIONES  
 
-# 5) REFERENCIAS
+*La integración de Quanser con MATLAB mediante QUARC permite desarrollar sistemas de control avanzados con capacidades de simulación en tiempo real. Es fundamental seguir los requisitos y pasos detallados para evitar errores de compatibilidad. Esta herramienta es particularmente útil para prototipado rápido en entornos académicos e industriales.*  
+
+# 5) REFERENCIAS  
+
+*En esta sección se listan las fuentes técnicas utilizadas para la elaboración de la guía:*  
+- Documentación oficial de Quanser Interactive Labs (2023)  
+- MATLAB R2021a+ System Requirements (MathWorks)  
+- QUARC Installation Guide v2.4 (Quanser Inc.)  
