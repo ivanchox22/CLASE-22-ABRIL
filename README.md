@@ -1,5 +1,9 @@
 # COMO HACER USO DE LOS GEMELOS DIGITALES (QUANSER)
 
+![image](https://github.com/user-attachments/assets/01916511-5fb9-4e7f-bc56-84fca18238f4)
+
+🔹 *Figura 1: Quanser.* 
+
 Los gemelos digitales son representaciones virtuales de sistemas físicos que permiten simular y analizar su comportamiento en un entorno controlado.  
 
 # 1) Definiciones
@@ -47,7 +51,7 @@ En este apartado se detalla el proceso de configuración inicial para integrar Q
   *Acepte los términos de licencia y seleccione la opción "Typical Install" a menos que necesite componentes personalizados.*  
 
 ![image](https://github.com/user-attachments/assets/5ba8c5e4-a6d4-4e25-ae59-f07311455623)  
-🔹 *Figura 1: Interfaz del complemento Quanser Interactive Labs para gemelos digitales, mostrando el panel de control de dispositivos virtuales.*  
+🔹 *Figura 2: Interfaz del complemento Quanser Interactive Labs para gemelos digitales, mostrando el panel de control de dispositivos virtuales.*  
 
 # 4) CONCLUSIONES  
 
