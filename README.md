@@ -56,6 +56,14 @@ En este apartado se detalla el proceso de configuración inicial para integrar Q
 
 ## 3.2 Fases de la Simulación en Simulink con Bloques QUARC
 
+En el presente laboratorio se desarrollará un modelo básico en Simulink utilizando bloques pertenecientes al entorno QUARC, con el objetivo principal de controlar un motor de corriente continua (DC) y medir en tiempo real el ángulo de rotación de su eje. Esta práctica forma parte fundamental del proceso de aprendizaje en sistemas de control en tiempo real, permitiendo al estudiante integrar conocimientos teóricos con su aplicación práctica en entornos de simulación interactiva.
+
+El sistema se construirá mediante la lectura de datos de un encoder conectado al eje del motor, cuya señal será procesada para obtener el desplazamiento angular. A través de un bloque de ganancia, estos pulsos se transformarán a unidades físicas como grados o radianes. Posteriormente, la señal será utilizada como retroalimentación dentro de un lazo de control, el cual puede configurarse manualmente o mediante un controlador automático (como un PID), permitiendo generar una salida analógica que gobierna el comportamiento del motor.
+
+Asimismo, se implementarán mecanismos de visualización que permiten monitorear las variables clave del sistema, así como herramientas de conmutación y detección de fallos, como la detección de estancamiento del motor (stall detection). Esta última funcionalidad es esencial para garantizar la seguridad del sistema, ya que puede alertar si el motor deja de moverse pese a recibir una señal de control.
+
+En conjunto, esta experiencia permitirá a los participantes familiarizarse con el flujo de trabajo en un entorno de programación en tiempo real, comprender la importancia de la adquisición de datos y el control digital, y establecer una comunicación efectiva entre el modelo computacional y la planta física o simulada, mediante el uso de sensores y actuadores virtuales conectados a través de hardware-in-the-loop (HIL). El conocimiento adquirido en esta práctica es directamente aplicable en áreas como automatización industrial, robótica y control de procesos.
+
 ![image](https://github.com/user-attachments/assets/67cdb41b-7ac0-431d-b958-cd658dfe51ee)
 
 🔹 *Figura 3: Simulación de prueba.*  
