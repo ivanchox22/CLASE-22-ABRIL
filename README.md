@@ -53,6 +53,38 @@ En este apartado se detalla el proceso de configuración inicial para integrar Q
 ![image](https://github.com/user-attachments/assets/5ba8c5e4-a6d4-4e25-ae59-f07311455623)  
 🔹 *Figura 2: Interfaz del complemento Quanser Interactive Labs para gemelos digitales, mostrando el panel de control de dispositivos virtuales.*  
 
+
+## 3.2 Fases de la Simulación en Simulink con Bloques QUARC
+
+![image](https://github.com/user-attachments/assets/67cdb41b-7ac0-431d-b958-cd658dfe51ee)
+
+🔹 *Figura 3: Simulación de prueba.*  
+
+A continuación, se describen las principales fases de la simulación realizada para el control de un motor de corriente continua utilizando bloques QUARC en Simulink:
+
+### 1. HIL Read Encoder (Lectura del encoder)
+- **Función:** Lee la posición angular del eje del motor en tiempo real a través de un encoder. Este dispositivo emite pulsos en función del desplazamiento del eje.
+
+### 2. Gain (Ganancia)
+- **Función:** Convierte los pulsos del encoder en unidades físicas como grados o radianes. Esto facilita la interpretación y el procesamiento de la señal en el sistema de control.
+
+### 3. Display / Scope (Visualización)
+- **Función:** Muestra la señal de posición angular del motor para facilitar el monitoreo durante la simulación.
+
+### 4. Controlador (PID u otro)
+- **Función:** Genera una señal de control a partir del error entre la posición deseada y la posición real. Su objetivo es minimizar ese error para lograr un comportamiento deseado del motor.
+
+### 5. Manual Switch (Conmutador manual)
+- **Función:** Permite seleccionar entre una entrada de control manual (por ejemplo, un valor constante) o la salida del controlador automático.
+
+### 6. HIL Write Analog (Salida analógica)
+- **Función:** Envía la señal analógica al motor. Esta señal controla el comportamiento del motor, como la velocidad o el torque.
+
+### 7. Stall Detection (Detección de estancamiento)
+- **Función:** Monitorea si el motor se encuentra detenido cuando debería estar en movimiento. Si se detecta una condición de estancamiento, puede generar una alarma o interrumpir la operación.
+
+
+
 # 4) CONCLUSIONES  
 
 *La integración de Quanser con MATLAB mediante QUARC permite desarrollar sistemas de control avanzados con capacidades de simulación en tiempo real. Es fundamental seguir los requisitos y pasos detallados para evitar errores de compatibilidad. Esta herramienta es particularmente útil para prototipado rápido en entornos académicos e industriales.*  
