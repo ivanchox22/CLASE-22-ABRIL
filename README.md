@@ -159,7 +159,7 @@ A continuación, se describen las principales fases de la simulación realizada 
 
 #### Configuración de Simulink
 - **Bloque HIL Write Analog**: Envía señal al canal analógico #0 del dispositivo de adquisición, conectado al amplificador PWM que controla el motor DC.  
-- **Bloque Constant**: Conectado al bloque HIL Write Analog (ver Figura 1.5).  
+- **Bloque Constant**: Conectado al bloque HIL Write Analog .  
   - Valor configurado en `0.5` para aplicar 0.5 V al motor.  
 
 #### Verificación
@@ -170,8 +170,6 @@ A continuación, se describen las principales fases de la simulación realizada 
 3. Modifique el bloque a `-0.5` y verifique giro **antihorario**.  
 4. Detenga la simulación.  
 
----
-
 #### 8.1 Medición y Estimación de Velocidad Angular
 
 ##### Temas
@@ -180,21 +178,25 @@ A continuación, se describen las principales fases de la simulación realizada 
 - Medición directa con tacómetro.  
 
 #### 8.2 Filtros Analógicos
+
 ##### Filtro Pasa Bajos (LPF)
-- **Función de transferencia**:  
-  $$ H_{LP}(s) = \frac{\omega_f}{s + \omega_f} $$  
+- **Función de transferencia**:
+
+  $$H_{LP}(s) = \frac{\omega_f}{s + \omega_f}$$  
   - $\omega_f$: Frecuencia de corte (rad/s).  
   - Atenúa frecuencias altas ($\geq \omega_f$) en $-3$ dB (~70% amplitud).  
 
 ##### Filtro Pasa Altos (HPF)
-- **Función de transferencia**:  
+
+- **Función de transferencia**:
+
   $$ H_{HP}(s) = \frac{\omega_f s}{s + \omega_f} $$  
   - Equivalente a una derivada ($s$) seguida de un LPF.  
   - Usado para estimar velocidad angular ($\hat{\omega}_f(t)$) desde posición angular ($\theta(t)$).  
 
----
 
 ##### 8.3 Estimación de Velocidad con Encoder + HPF
+
 ### Configuración en Simulink
 1. **Modificaciones previas**:  
    - Cambiar ganancia del encoder a **radianes**.  
@@ -217,10 +219,7 @@ A continuación, se describen las principales fases de la simulación realizada 
     - **Beneficio de $\omega_f$ bajo**: Mayor suavizado.  
     - **Compensación**: Retardo en la respuesta.  
 
-### Finalización
-- Detener simulación después de pruebas.
-
-
+.
 ## 3.4 Configuraciones motor DC Qube 2
 
 Para comenzar con el desarrollo de sistemas de control utilizando **Simulink**, es fundamental establecer una conexión entre el entorno de modelado y la planta virtual o física. En este caso, se utilizará el modelo del **Qube-Servo 2 – DC Motor**. Esta integración permite que MATLAB/Simulink transmita comandos de control hacia la planta y reciba datos de retroalimentación en tiempo real, facilitando la implementación de controladores y el análisis del comportamiento dinámico del sistema.
