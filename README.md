@@ -157,13 +157,69 @@ A continuación, se describen las principales fases de la simulación realizada 
 
 **Datos a utilizar:**
 
- **Amplitud:** 3 V
+#### Configuración de Simulink
+- **Bloque HIL Write Analog**: Envía señal al canal analógico #0 del dispositivo de adquisición, conectado al amplificador PWM que controla el motor DC.  
+- **Bloque Constant**: Conectado al bloque HIL Write Analog (ver Figura 1.5).  
+  - Valor configurado en `0.5` para aplicar 0.5 V al motor.  
 
-- **Periodo:** 2 s
+#### Verificación
+1. Ejecute `Monitor & Tune` para compilar y ejecutar el modelo.  
+2. Confirme que:  
+   - Una señal positiva genera una medición positiva (critical en sistemas de control).  
+   - Dirección del disco: **horario** con entrada positiva.  
+3. Modifique el bloque a `-0.5` y verifique giro **antihorario**.  
+4. Detenga la simulación.  
 
-- **Ancho de pulso:** 50%
+---
 
-- **Fase inicial:** 0
+#### 8.1 Medición y Estimación de Velocidad Angular
+
+##### Temas
+- Filtros pasa bajos/altos.  
+- Estimación de velocidad mediante encoder.  
+- Medición directa con tacómetro.  
+
+#### 8.2 Filtros Analógicos
+##### Filtro Pasa Bajos (LPF)
+- **Función de transferencia**:  
+  $$ H_{LP}(s) = \frac{\omega_f}{s + \omega_f} $$  
+  - $\omega_f$: Frecuencia de corte (rad/s).  
+  - Atenúa frecuencias altas ($\geq \omega_f$) en $-3$ dB (~70% amplitud).  
+
+##### Filtro Pasa Altos (HPF)
+- **Función de transferencia**:  
+  $$ H_{HP}(s) = \frac{\omega_f s}{s + \omega_f} $$  
+  - Equivalente a una derivada ($s$) seguida de un LPF.  
+  - Usado para estimar velocidad angular ($\hat{\omega}_f(t)$) desde posición angular ($\theta(t)$).  
+
+---
+
+##### 8.3 Estimación de Velocidad con Encoder + HPF
+### Configuración en Simulink
+1. **Modificaciones previas**:  
+   - Cambiar ganancia del encoder a **radianes**.  
+   - Reemplazar `HIL Read Encoder` por `HIL Read Encoder Timebase`.  
+
+2. **Modelo propuesto** (Figura 1.8):  
+   - Añadir bloque `Switched derivative for linearization` (derivada de la posición para estimar velocidad en rad/s).  
+   - Conectar a `Scope` (configurar propiedades según Figura 1.9).  
+
+3. **Filtrado**:  
+   - Inicialmente omitir el LPF (`50/(s + 50)`).  
+   - Posteriormente, implementar HPF combinado: `50s/(s + 50)`.  
+
+### Análisis de Resultados
+- **Señal de posición**: Discreta (pasos pequeños) → Derivada amplifica componentes de alta frecuencia.  
+- **Filtro HPF**: Mejora la estimación de velocidad al atenuar ruido.  
+- **Frecuencia de corte**:  
+  - Valor nominal: $\omega_f = 50$ rad/s (~7.96 Hz).  
+  - Variar $\omega_f$ entre **10-200 rad/s** (1.6-32 Hz) y evaluar:  
+    - **Beneficio de $\omega_f$ bajo**: Mayor suavizado.  
+    - **Compensación**: Retardo en la respuesta.  
+
+### Finalización
+- Detener simulación después de pruebas.
+
 
 ## 3.4 Configuraciones motor DC Qube 2
 
@@ -231,11 +287,35 @@ Esta selección informa al sistema de simulación si debe establecer conexión c
 
 # 4) CONCLUSIONES  
 
-*La integración de Quanser con MATLAB mediante QUARC permite desarrollar sistemas de control avanzados con capacidades de simulación en tiempo real. Es fundamental seguir los requisitos y pasos detallados para evitar errores de compatibilidad. Esta herramienta es particularmente útil para prototipado rápido en entornos académicos e industriales.*  
+- Los gemelos digitales en Quanser permiten una simulación precisa de sistemas físicos, facilitando el diseño, prueba y optimización de algoritmos de control antes de su implementación en hardware real. Esto reduce costos y riesgos en entornos educativos e industriales.
+
+- La integración con MATLAB/Simulink y QUARC proporciona un entorno robusto para el desarrollo de controladores en tiempo real, aprovechando herramientas como HIL (Hardware-In-the-Loop) para validar modelos con alta fidelidad.
+
+- El Qube-Servo 2 es una plataforma versátil para el aprendizaje de control automático, gracias a sus sensores de alta resolución (encoder de 4096 CPR), modularidad mecánica y capacidad de simular sistemas complejos como péndulos invertidos y servomotores.
+
+- La metodología HIL combinada con gemelos digitales permite realizar pruebas seguras y eficientes, detectando fallos como el stall condition antes de afectar al sistema físico.
+
+- La configuración paso a paso (instalación de QUARC, autenticación en QLabs y conexión con Simulink) demuestra la importancia de un flujo de trabajo estructurado para garantizar resultados confiables en simulaciones y control en tiempo real.
+
+- Eficiencia en el Aprendizaje:Los gemelos digitales de Quanser, como el *Qube-Servo 2*, optimizan el proceso de enseñanza en ingeniería de control al permitir experimentación virtual interactiva, reduciendo la dependencia de hardware físico y facilitando la comprensión de conceptos teóricos mediante simulaciones realistas.
+
+- Escalabilidad y Flexibilidad: La plataforma QUARC permite adaptar los modelos de simulación a diferentes niveles de complejidad, desde sistemas básicos (como control PID en motores DC) hasta problemas avanzados (control multivariable o no lineal), lo que la hace útil tanto en educación como en investigación.
+
+- Seguridad y Protección de Equipos: Mecanismos como stall detection y monitoreo en tiempo real protegen los dispositivos físicos durante pruebas, evitando daños por sobrecargas o mal funcionamiento, lo que es crucial en entornos de laboratorio con equipos costosos.
+
+- Preparación para Industria 4.0: El uso de gemelos digitales y metodologías HIL alinea la formación académica con las demandas de la industria moderna, donde la simulación y el control digital son pilares en automatización, robótica y sistemas ciberfísicos.
+
+- Interoperabilidad con Herramientas Estándar: La compatibilidad nativa de Quanser con MATLAB/Simulink asegura que los estudiantes y profesionales trabajen con herramientas ampliamente utilizadas en la industria, facilitando la transición entre entornos académicos y aplicaciones reales.
+
 
 # 5) REFERENCIAS  
 
-*En esta sección se listan las fuentes técnicas utilizadas para la elaboración de la guía:*  
-- Documentación oficial de Quanser Interactive Labs (2023)  
-- MATLAB R2021a+ System Requirements (MathWorks)  
-- QUARC Installation Guide v2.4 (Quanser Inc.)  
+- Quanser. (2023). Quanser Interactive Labs Documentation. Disponible en: https://www.quanser.com
+
+- MathWorks. (2023). Simulink Real-Time and QUARC Integration. Disponible en: https://www.mathworks.com
+
+- Quanser. (2022). *Qube-Servo 2 User Manual*.
+
+- Tao, F., et al. (2019). Digital Twins and Cyber–Physical Systems toward Smart Manufacturing and Industry 4.0: Correlation and Comparison. Engineering, 5(4), 653-661.
+
+- MathWorks. (2021). Hardware-in-the-Loop (HIL) Testing with Simulink.
