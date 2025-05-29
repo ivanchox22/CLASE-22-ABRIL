@@ -126,7 +126,7 @@ Asimismo, se implementarán mecanismos de visualización que permiten monitorear
 
 En conjunto, esta experiencia permitirá a los participantes familiarizarse con el flujo de trabajo en un entorno de programación en tiempo real, comprender la importancia de la adquisición de datos y el control digital, y establecer una comunicación efectiva entre el modelo computacional y la planta física o simulada, mediante el uso de sensores y actuadores virtuales conectados a través de hardware-in-the-loop (HIL). El conocimiento adquirido en esta práctica es directamente aplicable en áreas como automatización industrial, robótica y control de procesos.
 
-![image](https://github.com/user-attachments/assets/67cdb41b-7ac0-431d-b958-cd658dfe51ee)
+![image](https://github.com/user-attachments/assets/f03cef2c-a4de-45d3-8382-6801fae8b6b2)
 
 🔹 *Figura 6: Simulación de prueba.*  
 
