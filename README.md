@@ -202,10 +202,10 @@ A continuación, se describen las principales fases de la simulación realizada 
    - Cambiar ganancia del encoder a **radianes**.  
    - Reemplazar `HIL Read Encoder` por `HIL Read Encoder Timebase`.  
 
-2. **Modelo propuesto** (Figura 1.8):  
+2. **Modelo propuesto** :  
    - Añadir bloque `Switched derivative for linearization` (derivada de la posición para estimar velocidad en rad/s).  
-   - Conectar a `Scope` (configurar propiedades según Figura 1.9).  
-
+   - Conectar a `Scope`
+   - 
 3. **Filtrado**:  
    - Inicialmente omitir el LPF (`50/(s + 50)`).  
    - Posteriormente, implementar HPF combinado: `50s/(s + 50)`.  
