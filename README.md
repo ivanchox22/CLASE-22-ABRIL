@@ -153,6 +153,18 @@ A continuación, se describen las principales fases de la simulación realizada 
 ### 7. Stall Detection (Detección de estancamiento)
 - **Función:** Monitorea si el motor se encuentra detenido cuando debería estar en movimiento. Si se detecta una condición de estancamiento, puede generar una alarma o interrumpir la operación.
 
+### 8 Configuracion pulse generator
+
+**Datos a utilizar:**
+
+ **Amplitud:** 3 V
+
+- **Periodo:** 2 s
+
+- **Ancho de pulso:** 50%
+
+- **Fase inicial:** 0
+
 ## 3.4 Configuraciones motor DC Qube 2
 
 Para comenzar con el desarrollo de sistemas de control utilizando **Simulink**, es fundamental establecer una conexión entre el entorno de modelado y la planta virtual o física. En este caso, se utilizará el modelo del **Qube-Servo 2 – DC Motor**. Esta integración permite que MATLAB/Simulink transmita comandos de control hacia la planta y reciba datos de retroalimentación en tiempo real, facilitando la implementación de controladores y el análisis del comportamiento dinámico del sistema.
