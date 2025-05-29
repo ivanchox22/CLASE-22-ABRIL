@@ -86,8 +86,34 @@ Este modelo simula una estructura aeroespacial en configuración de doble hélic
 ### 3. Planta "Qube 2 – DC Motor":
 Corresponde a la simulación de un servomecanismo de corriente continua montado en una estructura compacta. Esta planta es ideal para introducirse en el diseño de controladores clásicos como PID, así como para comprender el comportamiento temporal de sistemas de primer y segundo orden. Además, permite implementar controladores de velocidad y posición, facilitando el estudio de conceptos como sobregiro, tiempo de establecimiento y errores en estado estacionario.
 
-La disponibilidad de estos modelos en QLabs permite que los estudiantes realicen pruebas realistas y diseñen controladores efectivos en un entorno completamente virtual, sin requerir el acceso inmediato a hardware físico, lo que fortalece el proceso de aprendizaje práctico.
 
+![image](https://github.com/user-attachments/assets/530805c1-6c4f-4acd-a966-fbb71663236d)
+
+🔹 *Figura 4: Ventana de inicio (gemelos digitales).*  
+
+## 3.3 Interaccion motor DC Qube 2
+
+En el ámbito académico de la ingeniería de control el **QUBE-Servo 2** es una plataforma experimental avanzada creada por **Quanser**, orientada al aprendizaje práctico en control de sistemas dinámicos. Esta planta didáctica ha sido diseñada para facilitar el estudio de principios fundamentales y avanzados del control automático en sistemas electromecánicos, permitiendo a los estudiantes implementar algoritmos en tiempo real, analizar el comportamiento dinámico y validar modelos directamente en hardware físico a través de entornos como **Simulink y QUARC**. Su diseño modular y su integración directa con herramientas de simulación la convierten en un recurso clave para los laboratorios universitarios de mecatrónica, robótica e ingeniería de control.
+
+### Interfaz USB :
+Actúa como el enlace de comunicación entre el sistema físico y la estación de trabajo del usuario. A través de esta conexión, es posible ejecutar controladores en tiempo real desde el computador, enviar señales de mando y recibir datos de medición, lo que permite una interacción eficiente y una sincronización precisa entre el software de control y el hardware experimental.
+
+### Sensores de medición (encoders):
+El sistema está equipado con encoders ópticos de alta resolución que capturan continuamente las variables del sistema, como la posición angular y la velocidad. Estos datos se utilizan como entrada para los algoritmos de retroalimentación, permitiendo ajustar el comportamiento del sistema en función del estado actual y mejorar la precisión del control implementado.
+
+### Motor de corriente continua (DC):
+Este componente cumple la función de actuador principal, generando el movimiento rotacional necesario para las pruebas experimentales. Su respuesta controlable lo hace adecuado para desarrollar ejercicios de regulación y seguimiento, analizar la respuesta transitoria del sistema, e implementar técnicas como control proporcional, integral y derivativo (PID).
+
+### Módulos mecánicos intercambiables:
+El QUBE-Servo 2 permite conectar distintos elementos mecánicos al eje del motor para simular diferentes tipos de sistemas. Entre los más utilizados se encuentran:
+
+- **El brazo rotatorio**, que posibilita el análisis de control de posición, estabilidad y seguimiento de referencias angulares.
+
+- **El péndulo invertido**, que representa un sistema altamente inestable y no lineal, ideal para probar técnicas de control robusto, estabilización por retroalimentación y observadores de estado.
+
+![image](https://github.com/user-attachments/assets/849df92a-bc55-404f-b65d-0e1ba3cdb764)
+
+🔹 *Figura 4: QUBE-Servo 2*
 
 ## 3.2 Fases de la Simulación en Simulink con Bloques QUARC
 
