@@ -28,7 +28,7 @@ A continuación se detallan los requisitos mínimos necesarios para poder utiliz
 
 - **MATLAB** (versión R2021a+)  
   *Se requiere una versión reciente de MATLAB debido a las dependencias de librerías y funciones utilizadas por QUARC.*  
-- **Cuenta Quanser**: [Registro aquí](https://portal.quanser.com/)  
+- **Cuenta Quanser**: [Registro aquí](https://portal.quanser.com/)   
   *Es necesario registrarse en el portal de Quanser para acceder a descargas de software, licencias y documentación técnica.*  
 - **Complemento QUARC**  
   *QUARC es un middleware esencial para la comunicación en tiempo real entre MATLAB/Simulink y los dispositivos Quanser.*  
