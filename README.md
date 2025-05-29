@@ -33,7 +33,7 @@ A continuación se detallan los requisitos mínimos necesarios para poder utiliz
 - **Complemento QUARC**  
   *QUARC es un middleware esencial para la comunicación en tiempo real entre MATLAB/Simulink y los dispositivos Quanser.*  
 
-# 3) PASO A PASO  
+# 3) Paso a paso
 
 En este apartado se detalla el proceso de configuración inicial para integrar Quanser Interactive Labs con MATLAB, incluyendo capturas ilustrativas.  
 
