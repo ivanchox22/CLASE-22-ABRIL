@@ -113,7 +113,7 @@ El QUBE-Servo 2 permite conectar distintos elementos mecánicos al eje del motor
 
 ![image](https://github.com/user-attachments/assets/849df92a-bc55-404f-b65d-0e1ba3cdb764)
 
-🔹 *Figura 4: QUBE-Servo 2*
+🔹 *Figura 5: QUBE-Servo 2*
 
 ## 3.3 Configuraciones motor DC Qube 2
 
@@ -134,9 +134,17 @@ En la ventana inicial de Simulink, selecciona la opción “Blank Model” para 
 Accede al navegador de bibliotecas y busca la categoría “QUARC Targets”. Esta contiene todos los bloques necesarios para interactuar con el hardware o con la planta virtual.
 Dentro de esta biblioteca, localiza el bloque específico correspondiente al Qube-Servo 2 - DC Motor. El nombre del bloque puede presentar variaciones menores según la versión del software instalada.
 
+![image](https://github.com/user-attachments/assets/c291d22e-5827-4146-893d-c63f3c13e8b8)
+
+🔹 *Figura 6: QUARC Targets*
+
 Una vez añadido el bloque al modelo, se deben ajustar ciertos parámetros para que la comunicación entre Simulink y la planta sea exitosa, ya sea para trabajar con simulación (gemelo digital) o con el dispositivo físico conectado por USB.
 
 ### Configuración del bloque del motor:
+
+![image](https://github.com/user-attachments/assets/dfa4ca0e-17bf-4c0b-925f-0953888985ff)
+
+🔹 *Figura 7: hil-1*
 
 #### A. Abrir las propiedades del bloque:
 
@@ -156,6 +164,16 @@ La configuración específica depende del entorno de trabajo:
 
 
 Esta selección informa al sistema de simulación si debe establecer conexión con la planta digital simulada localmente o con el hardware físico conectado al computador. Es un paso crítico que garantiza el correcto funcionamiento de los controladores implementados y la recolección de datos experimentales para análisis posterior.
+
+![image](https://github.com/user-attachments/assets/a14fdf1e-1ab0-4b85-8e5e-02cd79f1cbbb)
+
+🔹 *Figura 7: Confirguracion hil-1*
+
+
+
+## 3.4 
+
+
 
 ## 3.2 Fases de la Simulación en Simulink con Bloques QUARC
 
