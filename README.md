@@ -276,14 +276,32 @@ Esta selección informa al sistema de simulación si debe establecer conexión c
 🔹 *Figura 9: Confirguracion hil-1*
 
 
+#### Procedimiento de Ejecución de Simulación en Entorno de Control en Tiempo Real
 
-## 3.5
+Tras la implementación y parametrización inicial del modelo de control en el entorno Simulink, se inicia la fase de ejecución computacional. En esta etapa crítica, el sistema realiza las siguientes operaciones secuenciales:
+
+- **Inicialización del Protocolo de Comunicación:** El software establece un enlace de datos bidireccional con la interfaz del hardware Quanser mediante protocolos de tiempo real, implementando mecanismos de handshaking para garantizar la sincronización temporal.
+
+- **Verificación de Estado Operativo:** El indicador lumínico ubicado en la barra superior del IDE de Simulink adquiere una tonalidad verde espectral, lo que constituye una confirmación visual de:
+
+-- Establecimiento exitoso del canal de comunicación hardware-software
+
+-- Correcta sincronización del reloj en tiempo real (RT Clock)
+
+-- Disponibilidad del sistema para interacción con la planta física
+
+- **Monitorización del Proceso:** Durante la ejecución, el subsistema de diagnóstico verifica continuamente:
+
+--La latencia del bucle de control
+
+-- La integridad de las señales I/O
+
+-- La estabilidad temporal del proceso
 
 
+![image](https://github.com/user-attachments/assets/681462fd-9f42-41b2-96dc-4e1979462fda)
 
-
-
-
+🔹 *Figura 9: En funcionamiento*
 
 # 4) CONCLUSIONES  
 
