@@ -115,67 +115,8 @@ El QUBE-Servo 2 permite conectar distintos elementos mecánicos al eje del motor
 
 🔹 *Figura 5: QUBE-Servo 2*
 
-## 3.3 Configuraciones motor DC Qube 2
 
-Para comenzar con el desarrollo de sistemas de control utilizando **Simulink**, es fundamental establecer una conexión entre el entorno de modelado y la planta virtual o física. En este caso, se utilizará el modelo del **Qube-Servo 2 – DC Motor**. Esta integración permite que MATLAB/Simulink transmita comandos de control hacia la planta y reciba datos de retroalimentación en tiempo real, facilitando la implementación de controladores y el análisis del comportamiento dinámico del sistema.
-
-### Procedimiento general para conectar el modelo:
-
-#### A. Lanzar el entorno de Simulink:
-
-En la consola de MATLAB, ingresa el comando simulink y presiona Enter. Esto abrirá la interfaz gráfica desde la cual se puede iniciar la construcción del modelo.
-
-#### B. Crear un modelo nuevo:
-
-En la ventana inicial de Simulink, selecciona la opción “Blank Model” para generar un nuevo espacio de trabajo donde se insertarán los bloques necesarios para el control del sistema.
-
-#### C. Agregar bloques desde la biblioteca QUARC:
-
-Accede al navegador de bibliotecas y busca la categoría “QUARC Targets”. Esta contiene todos los bloques necesarios para interactuar con el hardware o con la planta virtual.
-Dentro de esta biblioteca, localiza el bloque específico correspondiente al Qube-Servo 2 - DC Motor. El nombre del bloque puede presentar variaciones menores según la versión del software instalada.
-
-![image](https://github.com/user-attachments/assets/c291d22e-5827-4146-893d-c63f3c13e8b8)
-
-🔹 *Figura 6: QUARC Targets*
-
-Una vez añadido el bloque al modelo, se deben ajustar ciertos parámetros para que la comunicación entre Simulink y la planta sea exitosa, ya sea para trabajar con simulación (gemelo digital) o con el dispositivo físico conectado por USB.
-
-### Configuración del bloque del motor:
-
-![image](https://github.com/user-attachments/assets/dfa4ca0e-17bf-4c0b-925f-0953888985ff)
-
-🔹 *Figura 7: hil-1*
-
-#### A. Abrir las propiedades del bloque:
-
-Haz doble clic sobre el bloque del motor insertado en el modelo. Esto abrirá la ventana de configuración donde se deben definir varios parámetros de conexión.
-
-#### B. Definir el nombre del dispositivo:
-
-En el campo destinado al identificador del hardware, escribe **HL_1**. Este nombre será utilizado por los demás bloques del modelo para referenciar correctamente la conexión con el actuador.
-
-#### C. Seleccionar el tipo de dispositivo y su identificador:
-
-La configuración específica depende del entorno de trabajo:
-
-- Para el entorno virtual (gemelo digital):
-
-- Para el dispositivo físico conectado por USB:
-
-
-Esta selección informa al sistema de simulación si debe establecer conexión con la planta digital simulada localmente o con el hardware físico conectado al computador. Es un paso crítico que garantiza el correcto funcionamiento de los controladores implementados y la recolección de datos experimentales para análisis posterior.
-
-![image](https://github.com/user-attachments/assets/a14fdf1e-1ab0-4b85-8e5e-02cd79f1cbbb)
-
-🔹 *Figura 7: Confirguracion hil-1*
-
-
-
-## 3.4 
-
-
-
-## 3.2 Fases de la Simulación en Simulink con Bloques QUARC
+## 3.3 Fases de la Simulación en Simulink con Bloques QUARC
 
 En el presente laboratorio se desarrollará un modelo básico en Simulink utilizando bloques pertenecientes al entorno QUARC, con el objetivo principal de controlar un motor de corriente continua (DC) y medir en tiempo real el ángulo de rotación de su eje. Esta práctica forma parte fundamental del proceso de aprendizaje en sistemas de control en tiempo real, permitiendo al estudiante integrar conocimientos teóricos con su aplicación práctica en entornos de simulación interactiva.
 
@@ -187,7 +128,7 @@ En conjunto, esta experiencia permitirá a los participantes familiarizarse con 
 
 ![image](https://github.com/user-attachments/assets/67cdb41b-7ac0-431d-b958-cd658dfe51ee)
 
-🔹 *Figura 3: Simulación de prueba.*  
+🔹 *Figura 6: Simulación de prueba.*  
 
 A continuación, se describen las principales fases de la simulación realizada para el control de un motor de corriente continua utilizando bloques QUARC en Simulink:
 
@@ -211,6 +152,68 @@ A continuación, se describen las principales fases de la simulación realizada 
 
 ### 7. Stall Detection (Detección de estancamiento)
 - **Función:** Monitorea si el motor se encuentra detenido cuando debería estar en movimiento. Si se detecta una condición de estancamiento, puede generar una alarma o interrumpir la operación.
+
+## 3.4 Configuraciones motor DC Qube 2
+
+Para comenzar con el desarrollo de sistemas de control utilizando **Simulink**, es fundamental establecer una conexión entre el entorno de modelado y la planta virtual o física. En este caso, se utilizará el modelo del **Qube-Servo 2 – DC Motor**. Esta integración permite que MATLAB/Simulink transmita comandos de control hacia la planta y reciba datos de retroalimentación en tiempo real, facilitando la implementación de controladores y el análisis del comportamiento dinámico del sistema.
+
+### Procedimiento general para conectar el modelo:
+
+#### A. Lanzar el entorno de Simulink:
+
+En la consola de MATLAB, ingresa el comando simulink y presiona Enter. Esto abrirá la interfaz gráfica desde la cual se puede iniciar la construcción del modelo.
+
+#### B. Crear un modelo nuevo:
+
+En la ventana inicial de Simulink, selecciona la opción “Blank Model” para generar un nuevo espacio de trabajo donde se insertarán los bloques necesarios para el control del sistema.
+
+#### C. Agregar bloques desde la biblioteca QUARC:
+
+Accede al navegador de bibliotecas y busca la categoría “QUARC Targets”. Esta contiene todos los bloques necesarios para interactuar con el hardware o con la planta virtual.
+Dentro de esta biblioteca, localiza el bloque específico correspondiente al Qube-Servo 2 - DC Motor. El nombre del bloque puede presentar variaciones menores según la versión del software instalada.
+
+![image](https://github.com/user-attachments/assets/c291d22e-5827-4146-893d-c63f3c13e8b8)
+
+🔹 *Figura 7: QUARC Targets*
+
+Una vez añadido el bloque al modelo, se deben ajustar ciertos parámetros para que la comunicación entre Simulink y la planta sea exitosa, ya sea para trabajar con simulación (gemelo digital) o con el dispositivo físico conectado por USB.
+
+### Configuración del bloque del motor:
+
+![image](https://github.com/user-attachments/assets/dfa4ca0e-17bf-4c0b-925f-0953888985ff)
+
+🔹 *Figura 8: hil-1*
+
+#### A. Abrir las propiedades del bloque:
+
+Haz doble clic sobre el bloque del motor insertado en el modelo. Esto abrirá la ventana de configuración donde se deben definir varios parámetros de conexión.
+
+#### B. Definir el nombre del dispositivo:
+
+En el campo destinado al identificador del hardware, escribe **HL_1**. Este nombre será utilizado por los demás bloques del modelo para referenciar correctamente la conexión con el actuador.
+
+#### C. Seleccionar el tipo de dispositivo y su identificador:
+
+La configuración específica depende del entorno de trabajo:
+
+- Para el entorno virtual (gemelo digital):
+
+- Para el dispositivo físico conectado por USB:
+
+
+Esta selección informa al sistema de simulación si debe establecer conexión con la planta digital simulada localmente o con el hardware físico conectado al computador. Es un paso crítico que garantiza el correcto funcionamiento de los controladores implementados y la recolección de datos experimentales para análisis posterior.
+
+![image](https://github.com/user-attachments/assets/a14fdf1e-1ab0-4b85-8e5e-02cd79f1cbbb)
+
+🔹 *Figura 9: Confirguracion hil-1*
+
+
+
+## 3.5
+
+
+
+
 
 
 
