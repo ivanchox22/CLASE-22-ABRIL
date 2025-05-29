@@ -158,9 +158,9 @@ En el campo destinado al identificador del hardware, escribe **HL_1**. Este nomb
 
 La configuración específica depende del entorno de trabajo:
 
-#### 1) Para el entorno virtual (gemelo digital):
+- Para el entorno virtual (gemelo digital):
 
-#### 2) Para el dispositivo físico conectado por USB:
+- Para el dispositivo físico conectado por USB:
 
 
 Esta selección informa al sistema de simulación si debe establecer conexión con la planta digital simulada localmente o con el hardware físico conectado al computador. Es un paso crítico que garantiza el correcto funcionamiento de los controladores implementados y la recolección de datos experimentales para análisis posterior.
