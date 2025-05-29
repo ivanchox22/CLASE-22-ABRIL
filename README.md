@@ -153,7 +153,7 @@ A continuación, se describen las principales fases de la simulación realizada 
 ### 7. Stall Detection (Detección de estancamiento)
 - **Función:** Monitorea si el motor se encuentra detenido cuando debería estar en movimiento. Si se detecta una condición de estancamiento, puede generar una alarma o interrumpir la operación.
 
-### 8 Configuracion pulse generator
+### 8 💡 Ejemplo: Configuracion pulse generator
 
 **Datos a utilizar:**
 
